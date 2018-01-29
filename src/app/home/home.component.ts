@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import { Employee } from '../models/employee.model';
 
 @Component({
   selector: 'home',
@@ -7,4 +8,16 @@ import {Component} from '@angular/core';
 })
 export class HomeComponent {
     languages: string[] = ['English', 'Spanish', 'Others'];
+    model = new Employee('Darla', 'Smith', true);
+
+/*
+    firstNameToUpperCase(value: string): void {
+        if (value.length > 0) {
+            this.model.firstName = value.charAt(0).toUpperCase() + value.slice(1);
+        } else {
+            this.model.firstName = value;
+        }
+    }
+*/
+
 }
