@@ -8,7 +8,7 @@ import { Employee } from '../models/employee.model';
 })
 export class HomeComponent {
     languages: string[] = ['English', 'Spanish', 'Others'];
-    model = new Employee('Darla', 'Smith', true, 'W2', 'English');
+    model = new Employee('', '', false, '');
 
 /*
     firstNameToUpperCase(value: string): void {
