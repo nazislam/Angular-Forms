@@ -1,15 +1,17 @@
 <div class="container">
     <h3>Employee Form</h3>
     <form #form="ngForm" novalidate>
-        <div class="form-group">
-            <label for="firstNameId">First Name</label>
-            <input #firstName="ngModel" required id="firstNameId" type="text" class="form-control" required name="firstName" 
+        <div class="form-group" [class.has-error]="firstName.invalid && firstName.dirty">
+            <label class="control-label" for="firstNameId">First Name</label>
+            <input #firstName="ngModel" pattern="...+"  required id="firstNameId" type="text" class="form-control" required name="firstName" 
                 [(ngModel)]="model.firstName" 
             >
+            <div *ngIf="firstName.invalid && firstName.dirty"  class="alert alert-danger">
+                First name is required, and must be at least 3 characters.
+            </div>
         </div>
     </form>
 
-    <h6> {{ firstName.valid }} </h6>
 
     <button class="btn btn-primary" type="submit">OK</button>
 </div>
